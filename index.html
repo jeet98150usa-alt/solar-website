@@ -13,105 +13,70 @@ body {
   font-family: 'Inter', sans-serif;
   background: #050705;
   color: white;
-  overflow-x: hidden;
 }
 
-/* NAV */
-nav {
-  position: fixed;
-  width: 100%;
-  padding: 20px 40px;
-  backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  justify-content: space-between;
-  z-index: 100;
-}
-
-/* HERO */
+/* HERO (PREMIUM BACKGROUND) */
 .hero {
   height: 100vh;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1509395176047-4a66953fd231') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 10%;
-  background: radial-gradient(circle at 30% 20%, #00ff9f20, transparent 60%),
-              radial-gradient(circle at 80% 70%, #00c85320, transparent 60%);
 }
 
 .hero h1 {
   font-size: 70px;
-  line-height: 1.1;
   background: linear-gradient(to right, #00ff9f, #00c853);
   -webkit-background-clip: text;
   color: transparent;
 }
 
 .hero p {
-  color: #aaa;
+  color: #ccc;
   max-width: 500px;
-  margin-top: 20px;
-}
-
-/* GRID IMAGE */
-.hero-image {
-  position: absolute;
-  right: 10%;
-  top: 20%;
-  width: 400px;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,255,150,0.2);
 }
 
 /* SECTION */
 .section {
-  padding: 120px 10%;
+  padding: 100px 10%;
 }
 
 .section h2 {
   font-size: 40px;
-  margin-bottom: 20px;
 }
 
-/* CARDS */
+/* CARDS WITH IMAGES */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
   margin-top: 40px;
 }
 
 .card {
-  padding: 30px;
-  border-radius: 20px;
   background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  overflow: hidden;
   border: 1px solid rgba(0,255,150,0.1);
-  backdrop-filter: blur(10px);
   transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
 }
 
 .card:hover {
   transform: translateY(-8px);
   border-color: #00ff9f;
-}
-
-/* IMAGE GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap: 20px;
-}
-
-.grid img {
-  width: 100%;
-  border-radius: 20px;
-  height: 250px;
-  object-fit: cover;
-  transition: 0.3s;
-}
-
-.grid img:hover {
-  transform: scale(1.05);
 }
 
 /* CONTACT */
@@ -132,57 +97,78 @@ nav {
   font-size: 20px;
   text-decoration: none;
   color: white;
-  box-shadow: 0 10px 30px rgba(0,255,150,0.3);
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <div><b>SOLAR PV</b></div>
-</nav>
-
+<!-- HERO -->
 <div class="hero">
-  <h1>Solar Energy<br>Reimagined</h1>
+  <h1>Solar Energy Reimagined</h1>
   <p>Reliable • Sustainable • Cost-Effective solutions for modern homes & businesses.</p>
-
-  <img class="hero-image" src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
 </div>
 
+<!-- WHY SOLAR -->
 <div class="section">
   <h2>Why Solar?</h2>
+
   <div class="cards">
-    <div class="card">Reduce electricity bills</div>
-    <div class="card">24/7 power backup</div>
-    <div class="card">Eco-friendly energy</div>
-    <div class="card">Long-term savings</div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581092335878-4e0c4d03f9d3">
+      <div class="card-content">Reduce electricity bills</div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+      <div class="card-content">Backup during outages</div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e">
+      <div class="card-content">Eco-friendly energy</div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
+      <div class="card-content">Long-term savings</div>
+    </div>
+
   </div>
 </div>
 
-<div class="section">
-  <h2>Our Installations</h2>
-  <div class="grid">
-    <img src="https://images.unsplash.com/photo-1584277261846-c6a1672ed979">
-    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d">
-    <img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634">
-  </div>
-</div>
-
+<!-- SERVICES -->
 <div class="section">
   <h2>Services</h2>
+
   <div class="cards">
-    <div class="card">Residential Solar</div>
-    <div class="card">Commercial Systems</div>
-    <div class="card">Energy Consulting</div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1595433562696-9c69f9bcdcb9">
+      <div class="card-content">Residential Solar Installation</div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7">
+      <div class="card-content">Commercial Solar Systems</div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581091870627-3b7f41c6bbf8">
+      <div class="card-content">Energy Consulting</div>
+    </div>
+
   </div>
 </div>
 
+<!-- CONTACT -->
 <div class="contact">
   <h2>Contact Us</h2>
   <p>📞 +91 788 871 2152</p>
 </div>
 
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/917888712152">💬</a>
 
 </body>
