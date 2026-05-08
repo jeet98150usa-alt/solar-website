@@ -1,940 +1,1005 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ISO & Solar Solutions – Clean Energy | Compliance | Quality Life</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --green-dark: #1a4a1f;
-    --green-mid: #2d7a35;
-    --green-bright: #4caf50;
-    --gold: #c9a227;
-    --gold-light: #f0d060;
-    --cream: #f8f5ee;
-    --white: #ffffff;
-    --charcoal: #1c1c1c;
-    --text-muted: #5a6a5c;
-    --card-bg: rgba(255,255,255,0.92);
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO & Solar Solutions | Reduce Electricity Bills Up To 80%</title>
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  html { scroll-behavior: smooth; }
+    <style>
+        :root {
+            --primary-dark: #1a4a1f;
+            --accent-gold: #c9a227;
+            --cream-light: #f8f5ee;
+            --white: #ffffff;
+            --black: #121212;
+        }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--charcoal);
-    overflow-x: hidden;
-  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 6vw;
-    background: rgba(26,74,31,0.97);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 2px 24px rgba(0,0,0,0.18);
-  }
-  .nav-logo { display: flex; align-items: center; gap: 14px; }
-  .nav-logo-icon {
-    width: 46px; height: 46px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px;
-  }
-  .nav-logo-text { color: white; }
-  .nav-logo-text strong { display: block; font-size: 1rem; letter-spacing: 0.04em; }
-  .nav-logo-text span { font-size: 0.7rem; color: var(--gold-light); letter-spacing: 0.12em; text-transform: uppercase; }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.05em; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--gold-light); }
-  .nav-cta {
-    background: linear-gradient(135deg, var(--gold), #e8b820);
-    color: var(--green-dark);
-    border: none; padding: 10px 22px; border-radius: 30px;
-    font-weight: 700; font-size: 0.85rem; cursor: pointer;
-    letter-spacing: 0.04em; transition: transform 0.2s, box-shadow 0.2s;
-    text-decoration: none;
-  }
-  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,162,39,0.4); }
+        html {
+            scroll-behavior: smooth;
+        }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(160deg, #0a2e0e 0%, #1a4a1f 40%, #2d6b35 70%, #1a4a1f 100%);
-    display: flex; align-items: center;
-    position: relative; overflow: hidden;
-    padding: 120px 6vw 80px;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><radialGradient id="g" cx="60%" cy="30%"><stop offset="0%" stop-color="%23c9a227" stop-opacity="0.15"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><rect fill="url(%23g)" width="800" height="600"/></svg>') center/cover;
-  }
-  /* Animated sun rays */
-  .sun-rays {
-    position: absolute; top: -100px; right: -100px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle at center, rgba(201,162,39,0.25) 0%, rgba(201,162,39,0.08) 40%, transparent 70%);
-    border-radius: 50%;
-    animation: pulse 4s ease-in-out infinite;
-  }
-  @keyframes pulse { 0%,100%{transform:scale(1);opacity:0.8} 50%{transform:scale(1.12);opacity:1} }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream-light);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-  .hero-content { position: relative; z-index: 2; max-width: 620px; }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(201,162,39,0.15);
-    border: 1px solid rgba(201,162,39,0.4);
-    color: var(--gold-light);
-    padding: 6px 16px; border-radius: 20px;
-    font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 28px;
-    animation: fadeUp 0.8s ease both;
-  }
-  .hero-tagline {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem; font-weight: 500;
-    color: rgba(255,255,255,0.7);
-    letter-spacing: 0.15em; text-transform: uppercase;
-    margin-bottom: 14px;
-    animation: fadeUp 0.8s 0.1s ease both;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 900;
-    color: white;
-    line-height: 1.05;
-    margin-bottom: 16px;
-    animation: fadeUp 0.8s 0.2s ease both;
-  }
-  .hero h1 em {
-    font-style: normal;
-    color: var(--gold-light);
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.15em;
-  }
-  .hero-sub {
-    color: rgba(255,255,255,0.7);
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 40px;
-    animation: fadeUp 0.8s 0.3s ease both;
-  }
-  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeUp 0.8s 0.4s ease both; }
-  .btn-primary {
-    background: linear-gradient(135deg, var(--gold), #e8b820);
-    color: var(--green-dark); border: none;
-    padding: 15px 32px; border-radius: 40px;
-    font-weight: 700; font-size: 0.95rem; cursor: pointer;
-    letter-spacing: 0.04em; transition: all 0.25s;
-    text-decoration: none; display: inline-block;
-  }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(201,162,39,0.45); }
-  .btn-outline {
-    background: transparent; color: white;
-    border: 2px solid rgba(255,255,255,0.4);
-    padding: 14px 30px; border-radius: 40px;
-    font-weight: 600; font-size: 0.95rem; cursor: pointer;
-    letter-spacing: 0.04em; transition: all 0.25s;
-    text-decoration: none; display: inline-block;
-  }
-  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+        @keyframes slowReveal {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+                filter: blur(8px);
+            }
 
-  .hero-stats {
-    display: flex; gap: 40px; margin-top: 56px;
-    animation: fadeUp 0.8s 0.5s ease both;
-  }
-  .stat { border-left: 2px solid rgba(201,162,39,0.5); padding-left: 18px; }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold-light); }
-  .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); letter-spacing: 0.06em; text-transform: uppercase; }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
 
-  .hero-visual {
-    position: absolute; right: 4vw; top: 50%;
-    transform: translateY(-50%);
-    width: min(42vw, 480px);
-    z-index: 2;
-    animation: floatIn 1s 0.6s ease both;
-  }
-  .hero-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 24px;
-    padding: 32px;
-    backdrop-filter: blur(16px);
-  }
-  .offer-badge {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: white; border-radius: 16px; padding: 20px 24px;
-    text-align: center; margin-bottom: 20px;
-  }
-  .offer-badge .limited { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.85; }
-  .offer-badge .pct { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; line-height: 1; }
-  .offer-badge .desc { font-size: 0.85rem; opacity: 0.9; }
-  .mini-benefits { display: flex; flex-direction: column; gap: 12px; }
-  .mini-benefit { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.85); font-size: 0.88rem; }
-  .mini-benefit .icon { width: 32px; height: 32px; background: rgba(76,175,80,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+        .reveal {
+            opacity: 0;
+            transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
 
-  @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
-  @keyframes floatIn { from{opacity:0;transform:translateY(-40%) translateX(40px)} to{opacity:1;transform:translateY(-50%)} }
+        .reveal.active {
+            opacity: 1;
+            animation: slowReveal 1.8s ease forwards;
+        }
 
-  /* ── SECTION COMMON ── */
-  section { padding: 96px 6vw; }
-  .section-label {
-    display: inline-block;
-    background: rgba(45,122,53,0.1);
-    color: var(--green-mid);
-    border: 1px solid rgba(45,122,53,0.25);
-    padding: 5px 16px; border-radius: 20px;
-    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
-    font-weight: 600; margin-bottom: 16px;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    color: var(--green-dark);
-    line-height: 1.2;
-    margin-bottom: 16px;
-  }
-  .section-sub { color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; max-width: 560px; }
+        nav {
+            background: rgba(26, 74, 31, 0.95);
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2000;
+            padding: 0 6vw;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
 
-  /* ── SERVICES ── */
-  .services { background: white; }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-    margin-top: 56px;
-  }
-  .service-card {
-    background: var(--cream);
-    border: 1px solid rgba(45,122,53,0.12);
-    border-radius: 20px;
-    padding: 36px 28px;
-    position: relative; overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: default;
-  }
-  .service-card::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-    opacity: 0; transition: opacity 0.3s;
-    border-radius: 20px;
-  }
-  .service-card:hover::before { opacity: 1; }
-  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,74,31,0.2); }
-  .service-card > * { position: relative; z-index: 1; }
-  .service-card:hover .service-icon { background: rgba(255,255,255,0.15); }
-  .service-card:hover h3,
-  .service-card:hover p,
-  .service-card:hover .service-tag { color: white; }
-  .service-card:hover .service-tag { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); }
+        .brand-left h2 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
 
-  .service-icon {
-    width: 60px; height: 60px;
-    background: rgba(45,122,53,0.1);
-    border-radius: 16px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 28px; margin-bottom: 22px;
-    transition: background 0.3s;
-  }
-  .service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem; font-weight: 700;
-    color: var(--green-dark);
-    margin-bottom: 10px; transition: color 0.3s;
-  }
-  .service-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; margin-bottom: 18px; transition: color 0.3s; }
-  .service-tag {
-    display: inline-block;
-    border: 1px solid rgba(45,122,53,0.3);
-    color: var(--green-mid);
-    padding: 4px 12px; border-radius: 20px;
-    font-size: 0.74rem; font-weight: 600; letter-spacing: 0.07em;
-    transition: all 0.3s;
-  }
+        .brand-left span {
+            color: var(--accent-gold);
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+        }
 
-  /* ── BENEFITS ── */
-  .benefits { background: var(--cream); }
-  .benefits-inner {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 80px; align-items: center;
-  }
-  .benefits-list { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
-  .benefit-item {
-    display: flex; gap: 18px; align-items: flex-start;
-    padding: 22px 24px;
-    background: white;
-    border-radius: 16px;
-    border-left: 4px solid var(--green-bright);
-    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
-    transition: transform 0.25s, box-shadow 0.25s;
-  }
-  .benefit-item:hover { transform: translateX(6px); box-shadow: 0 6px 24px rgba(26,74,31,0.1); }
-  .benefit-item:nth-child(2) { border-left-color: var(--gold); }
-  .benefit-item:nth-child(3) { border-left-color: #3498db; }
-  .benefit-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
-  .benefit-item h4 { font-weight: 700; color: var(--green-dark); margin-bottom: 6px; font-size: 1rem; }
-  .benefit-item ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-  .benefit-item li { font-size: 0.87rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
-  .benefit-item li::before { content: '✓'; color: var(--green-bright); font-weight: 700; font-size: 0.85rem; }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
 
-  .benefits-visual { position: relative; }
-  .benefits-img-wrap {
-    border-radius: 24px; overflow: hidden;
-    box-shadow: 0 30px 70px rgba(0,0,0,0.15);
-    position: relative;
-  }
-  .benefits-img-wrap img { width: 100%; display: block; }
-  .benefits-overlay {
-    position: absolute; bottom: 24px; left: 24px; right: 24px;
-    background: rgba(26,74,31,0.92);
-    backdrop-filter: blur(12px);
-    border-radius: 16px;
-    padding: 20px 24px;
-    color: white;
-    display: flex; align-items: center; gap: 16px;
-  }
-  .overlay-icon { font-size: 32px; }
-  .overlay-text strong { display: block; font-size: 1.1rem; font-weight: 700; }
-  .overlay-text span { font-size: 0.82rem; opacity: 0.8; }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+            font-weight: 500;
+        }
 
-  /* ── ISO SECTION ── */
-  .iso-section {
-    background: linear-gradient(135deg, var(--green-dark) 0%, #0f2e14 100%);
-    color: white; position: relative; overflow: hidden;
-  }
-  .iso-section::before {
-    content: '';
-    position: absolute; top: -200px; right: -200px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(201,162,39,0.1) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .iso-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; }
-  .iso-section .section-label { background: rgba(201,162,39,0.15); color: var(--gold-light); border-color: rgba(201,162,39,0.3); }
-  .iso-section .section-title { color: white; }
-  .iso-section .section-sub { color: rgba(255,255,255,0.7); }
-  .iso-cards { display: flex; flex-direction: column; gap: 20px; }
-  .iso-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    padding: 24px 28px;
-    display: flex; gap: 18px; align-items: flex-start;
-    transition: background 0.25s, border-color 0.25s;
-  }
-  .iso-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(201,162,39,0.3); }
-  .iso-card-icon { font-size: 36px; flex-shrink: 0; }
-  .iso-card h4 { font-weight: 700; font-size: 1rem; margin-bottom: 6px; color: var(--gold-light); }
-  .iso-card p { font-size: 0.87rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
 
-  /* ── PROCESS ── */
-  .process { background: white; }
-  .process-steps {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0; margin-top: 60px; position: relative;
-  }
-  .process-steps::before {
-    content: '';
-    position: absolute; top: 40px; left: 10%; right: 10%; height: 2px;
-    background: linear-gradient(90deg, var(--green-bright), var(--gold));
-  }
-  .step { text-align: center; padding: 0 20px; position: relative; }
-  .step-num {
-    width: 80px; height: 80px;
-    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-    color: white; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700;
-    margin: 0 auto 24px;
-    box-shadow: 0 8px 24px rgba(26,74,31,0.3);
-    position: relative; z-index: 1;
-    transition: transform 0.25s;
-  }
-  .step:hover .step-num { transform: scale(1.1); }
-  .step h4 { font-weight: 700; color: var(--green-dark); margin-bottom: 8px; font-size: 1rem; }
-  .step p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+        section {
+            padding: 120px 8vw;
+        }
 
-  /* ── WHY US ── */
-  .why-us { background: var(--cream); }
-  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 56px; }
-  .why-card {
-    background: white; border-radius: 20px;
-    padding: 32px 24px; text-align: center;
-    border: 1px solid rgba(0,0,0,0.06);
-    transition: all 0.3s;
-  }
-  .why-card:hover { box-shadow: 0 16px 40px rgba(26,74,31,0.12); transform: translateY(-4px); }
-  .why-card .why-icon { font-size: 40px; margin-bottom: 16px; }
-  .why-card h4 { font-weight: 700; color: var(--green-dark); margin-bottom: 8px; font-size: 1rem; }
-  .why-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            text-align: center;
+        }
 
-  /* ── CTA BANNER ── */
-  .cta-banner {
-    background: linear-gradient(135deg, var(--gold) 0%, #e8b820 50%, #c9a227 100%);
-    padding: 72px 6vw;
-    text-align: center;
-  }
-  .cta-banner h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--green-dark); margin-bottom: 14px;
-  }
-  .cta-banner p { color: rgba(26,74,31,0.75); font-size: 1.05rem; margin-bottom: 36px; }
-  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .btn-dark {
-    background: var(--green-dark); color: white;
-    padding: 15px 36px; border-radius: 40px;
-    font-weight: 700; font-size: 1rem;
-    text-decoration: none; display: inline-block;
-    transition: all 0.25s;
-  }
-  .btn-dark:hover { background: var(--charcoal); transform: translateY(-2px); }
+        .section-subtitle {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+            color: #555;
+        }
 
-  /* ── CONTACT ── */
-  .contact { background: white; }
-  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-  .contact-info { display: flex; flex-direction: column; gap: 28px; margin-top: 36px; }
-  .contact-item { display: flex; gap: 18px; align-items: flex-start; }
-  .contact-icon {
-    width: 48px; height: 48px; flex-shrink: 0;
-    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-  }
-  .contact-item h4 { font-weight: 700; color: var(--green-dark); margin-bottom: 4px; }
-  .contact-item p, .contact-item a { font-size: 0.9rem; color: var(--text-muted); text-decoration: none; }
-  .contact-item a:hover { color: var(--green-mid); }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('pexels-tomfisk-9893729.jpg') no-repeat center center/cover;
+            color: #fff;
+        }
 
-  .contact-form { background: var(--cream); border-radius: 24px; padding: 40px; }
-  .contact-form h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--green-dark); margin-bottom: 28px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .form-group { margin-bottom: 18px; }
-  .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--green-dark); margin-bottom: 7px; letter-spacing: 0.04em; }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    background: white;
-    border: 1.5px solid rgba(45,122,53,0.2);
-    border-radius: 10px;
-    padding: 12px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    color: var(--charcoal);
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--green-mid); }
-  .form-group textarea { resize: vertical; min-height: 110px; }
-  .form-submit {
-    width: 100%;
-    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-    color: white; border: none;
-    padding: 16px; border-radius: 12px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1rem; font-weight: 700;
-    cursor: pointer; letter-spacing: 0.04em;
-    transition: all 0.25s;
-  }
-  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(26,74,31,0.3); }
+        .hero-content {
+            max-width: 850px;
+        }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--charcoal);
-    color: rgba(255,255,255,0.7);
-    padding: 56px 6vw 28px;
-  }
-  .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
-  .footer-brand h3 { font-family: 'Playfair Display', serif; color: white; font-size: 1.4rem; margin-bottom: 12px; }
-  .footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-bottom: 20px; }
-  .footer-tagline { font-size: 0.78rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; }
-  .footer-col h4 { color: white; font-weight: 700; margin-bottom: 18px; font-size: 0.95rem; }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.87rem; transition: color 0.2s; }
-  .footer-col a:hover { color: var(--gold-light); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 24px;
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 0.82rem; color: rgba(255,255,255,0.45);
-    flex-wrap: wrap; gap: 12px;
-  }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero-visual { display: none; }
-    .benefits-inner,
-    .iso-inner,
-    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
-    .footer-inner { grid-template-columns: 1fr 1fr; }
-    .process-steps::before { display: none; }
-    .nav-links { display: none; }
-  }
-  @media (max-width: 600px) {
-    .hero-stats { gap: 24px; flex-wrap: wrap; }
-    .form-row { grid-template-columns: 1fr; }
-    .footer-inner { grid-template-columns: 1fr; }
-    .footer-bottom { flex-direction: column; text-align: center; }
-  }
+        .hero h1 span {
+            color: var(--accent-gold);
+        }
 
-  /* Scroll animations */
-  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
-</style>
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            max-width: 750px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 34px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .primary-btn {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+
+        .secondary-btn {
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .primary-btn:hover,
+        .secondary-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+            padding: 0 8vw;
+        }
+
+        .stat-box {
+            background: #fff;
+            padding: 40px 20px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .stat-box i {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 0;
+        }
+
+        .stat-icon-wrap {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-dark), #2e7d32);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 6px 20px rgba(26,74,31,0.3);
+        }
+
+        .stat-box h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+        }
+
+        .mission {
+            background: linear-gradient(rgba(255,255,255,0.35), rgba(240,248,255,0.42)), url('127800470.avif') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: #1a4a1f;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .mission-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .mission-badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            padding: 7px 20px;
+            border-radius: 30px;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+        }
+
+        .mission h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 0 2px 8px rgba(255,255,255,0.6);
+        }
+
+        .mission-lead {
+            font-size: 1.2rem;
+            max-width: 780px;
+            margin: 20px auto 50px;
+            line-height: 1.8;
+            color: #fff;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.45);
+        }
+
+        .mission-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .mission-pillar {
+            background: rgba(255,255,255,0.92);
+            border: 1px solid rgba(26,74,31,0.12);
+            border-radius: 18px;
+            padding: 35px 30px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        .mission-pillar:hover {
+            transform: translateY(-6px);
+        }
+
+        .pillar-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-gold), #e8b820);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            box-shadow: 0 6px 18px rgba(201,162,39,0.35);
+        }
+
+        .pillar-icon i {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+        }
+
+        .mission-pillar h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .mission-pillar p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #3a5c3f;
+        }
+
+        .mission-quote {
+            background: rgba(0,0,0,0.25);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 12px;
+            padding: 35px 40px;
+            margin-bottom: 45px;
+            text-align: left;
+            position: relative;
+        }
+
+        .mission-quote-icon {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .mission-quote blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .mission-quote cite {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .mission-commitment {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .commit-item {
+            background: rgba(255,255,255,0.92);
+            border: 1px solid rgba(26,74,31,0.25);
+            border-radius: 40px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .commit-item i {
+            color: var(--accent-gold);
+            font-size: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            height: 420px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.1));
+        }
+
+        .card-info {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+            color: #fff;
+        }
+
+        .card-info h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            font-size: 1.7rem;
+        }
+
+        .bg-pv {
+            background: url('pv_installation_best_practices.png') center/cover;
+        }
+
+        .bg-rooftop {
+            background: url('roof top solar.webp') center/cover;
+        }
+
+        .bg-iso {
+            background: url('iso consulting.jpg') center/cover;
+        }
+
+        .bg-gfsi {
+            background: url('GFSI_MIC_Food_Group-1.jpeg') center/cover;
+        }
+
+        .bg-wiring {
+            background: url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800') center/cover;
+        }
+
+        .bg-mounting {
+            background: url('panel mounting.jpg') center/cover;
+        }
+
+        .why-us {
+            background: #0d1b2a;
+            color: #fff;
+        }
+
+        .why-us .section-title {
+            color: #fff;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .why-box {
+            background: rgba(255,255,255,0.05);
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .why-box:hover {
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .why-icon-wrap {
+            width: 65px;
+            height: 65px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent-gold), #e8b820);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            box-shadow: 0 6px 18px rgba(201,162,39,0.4);
+        }
+
+        .why-box i {
+            font-size: 1.7rem;
+            color: var(--primary-dark);
+            margin-bottom: 0;
+        }
+
+        .why-box h3 {
+            margin-bottom: 12px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .project img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .calculator {
+            background: linear-gradient(135deg, #0b5d3d, #0d1b2a);
+            color: #fff;
+            padding: 60px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .calculator input {
+            width: 100%;
+            max-width: 400px;
+            padding: 16px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+
+        .calculator button {
+            margin-top: 20px;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 10px;
+            background: var(--accent-gold);
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .reviews {
+            background: var(--white);
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .stars {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .adv-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 18px;
+            border-top: 5px solid var(--accent-gold);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        .adv-card h3 {
+            margin-bottom: 18px;
+            color: var(--primary-dark);
+        }
+
+        .adv-card ul {
+            list-style: none;
+        }
+
+        .adv-card ul li {
+            margin-bottom: 12px;
+        }
+
+        .contact-section {
+            background: var(--cream-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 45px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        footer {
+            background: var(--black);
+            color: rgba(255,255,255,0.7);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .whatsapp {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            background: #25D366;
+            color: #fff;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            z-index: 999;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        @media (max-width: 992px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 25px 6vw;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .mission {
+                text-align: center;
+            }
+
+            .mission-inner {
+                margin: auto;
+            }
+
+            .mission-pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-quote {
+                padding: 25px;
+            }
+
+            .calculator {
+                padding: 40px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <div class="nav-logo-icon">☀️</div>
-    <div class="nav-logo-text">
-      <strong>ISO & Solar Solutions</strong>
-      <span>Clean Energy · Compliance · Quality Life</span>
-    </div>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#benefits">Benefits</a></li>
-    <li><a href="#iso">ISO Consulting</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Get Free Quote</a>
-</nav>
+    <nav>
+        <div class="brand-left">
+            <h2>ISO & SOLAR</h2>
+            <span>Solutions</span>
+        </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="sun-rays"></div>
-  <div class="hero-content">
-    <div class="hero-badge">☀️ Jalandhar's Trusted Solar Partner</div>
-    <p class="hero-tagline">ISO & Solar Solutions</p>
-    <h1>Power Your Future<br><em>With the Sun</em></h1>
-    <p class="hero-sub">Build a greener tomorrow for generations ahead. Expert PV installation, rooftop solutions & ISO certification consulting — all under one roof.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Get Your Free Quote →</a>
-      <a href="#services" class="btn-outline">Explore Services</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">40%</div>
-        <div class="stat-label">Savings on Installation</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">24/7</div>
-        <div class="stat-label">Uninterrupted Power</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Eco-Friendly</div>
-      </div>
-    </div>
-  </div>
+        <div class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#advancements">Technology</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-  <div class="hero-visual">
-    <div class="hero-card">
-      <div class="offer-badge">
-        <div class="limited">⏰ Limited Time Offer</div>
-        <div class="pct">40%</div>
-        <div class="desc">Savings on Solar Installation*</div>
-      </div>
-      <div class="mini-benefits">
-        <div class="mini-benefit"><div class="icon">⚡</div> 24/7 uninterrupted power supply</div>
-        <div class="mini-benefit"><div class="icon">💰</div> Lower electricity bills, net metering</div>
-        <div class="mini-benefit"><div class="icon">🌿</div> Zero emissions, cleaner air</div>
-        <div class="mini-benefit"><div class="icon">🔧</div> Expert turnkey installation</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="hero" id="hero">
+        <div class="hero-content reveal active">
+            <h1>Reduce Electricity Bills <span>Up To 80%</span></h1>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="reveal">
-    <span class="section-label">What We Offer</span>
-    <h2 class="section-title">Comprehensive Clean Energy<br>& Compliance Solutions</h2>
-    <p class="section-sub">From solar panel installation to ISO certification — we're your single-stop partner for energy independence and business compliance.</p>
-  </div>
-  <div class="services-grid reveal">
-    <div class="service-card">
-      <div class="service-icon">🔆</div>
-      <h3>PV Systems Installation</h3>
-      <p>Complete photovoltaic system design and installation. Expert turnkey solutions from site assessment to commissioning, tailored to your energy needs.</p>
-      <span class="service-tag">Expert Turnkey</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🏠</div>
-      <h3>Rooftop Solar Solutions</h3>
-      <p>On-grid, off-grid, and hybrid rooftop solar options for homes and commercial buildings. Maximize your rooftop potential with smart solar design.</p>
-      <span class="service-tag">On/Off/Hybrid Grid</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🏅</div>
-      <h3>ISO Certification Consulting</h3>
-      <p>Achieve and maintain ISO 9001, ISO 14001, and other international quality management standards with our expert consulting support.</p>
-      <span class="service-tag">ISO 9001 / 14001</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🍃</div>
-      <h3>GFSI Food Safety Standards</h3>
-      <p>Full compliance support for GFSI benchmarked schemes including SQF and BRC, helping food businesses meet global safety standards.</p>
-      <span class="service-tag">SQF · BRC</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🔌</div>
-      <h3>Wiring Integration</h3>
-      <p>Safe, smart, and efficient electrical wiring integration for your solar systems. Certified electricians ensuring code-compliant installations.</p>
-      <span class="service-tag">Safe & Smart</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🛠️</div>
-      <h3>Panel Mounting</h3>
-      <p>Secure, durable, and reliable panel mounting solutions. Engineered mounting structures for maximum performance and longevity.</p>
-      <span class="service-tag">Secure · Reliable</span>
-    </div>
-  </div>
-</section>
+            <p>
+                ISO & SOLAR Solutions provide Professional Solar Installation & ISO Consultancy Service in India for homes, factories, hospitals and commercial businesses.
+            </p>
 
-<!-- BENEFITS -->
-<section class="benefits" id="benefits">
-  <div class="benefits-inner">
-    <div>
-      <div class="reveal">
-        <span class="section-label">The Benefits</span>
-        <h2 class="section-title">Why Going Solar Is the Smartest Move</h2>
-        <p class="section-sub">Solar energy delivers operational, financial, and environmental advantages that compound over time.</p>
-      </div>
-      <div class="benefits-list reveal">
-        <div class="benefit-item">
-          <div class="benefit-icon">⚙️</div>
-          <div>
-            <h4>Operational Benefits</h4>
-            <ul>
-              <li>24/7 uninterrupted power supply</li>
-              <li>Stable voltage for sensitive equipment</li>
-              <li>Reduced downtime and outages</li>
-            </ul>
-          </div>
+            <div class="hero-btns">
+                <a href="#contact" class="btn primary-btn">Get Free Site Visit</a>
+                <a href="https://wa.me/917888712152" class="btn secondary-btn">WhatsApp Now</a>
+            </div>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">💰</div>
-          <div>
-            <h4>Financial Benefits</h4>
-            <ul>
-              <li>Lower electricity bills immediately</li>
-              <li>Net metering — sell surplus power</li>
-              <li>Long-term savings & ROI</li>
-            </ul>
-          </div>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">🌍</div>
-          <div>
-            <h4>Environmental Benefits</h4>
-            <ul>
-              <li>Zero carbon emissions</li>
-              <li>Cleaner air for your community</li>
-              <li>Supports a green future</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="benefits-visual reveal">
-      <div class="benefits-img-wrap">
-        <!-- Solar visual placeholder -->
-        <div style="width:100%;height:420px;background:linear-gradient(135deg,#1a4a1f,#2d7a35,#4caf50);display:flex;align-items:center;justify-content:center;font-size:100px;">☀️</div>
-        <div class="benefits-overlay">
-          <div class="overlay-icon">🏆</div>
-          <div class="overlay-text">
-            <strong>Up to 40% Savings</strong>
-            <span>On solar installation — Limited time offer</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ISO SECTION -->
-<section class="iso-section" id="iso">
-  <div class="iso-inner">
-    <div class="reveal">
-      <span class="section-label">Compliance Experts</span>
-      <h2 class="section-title" style="color:white">ISO & Food Safety<br>Certification Support</h2>
-      <p class="section-sub" style="max-width:420px">We help businesses achieve international compliance with globally recognised standards, ensuring quality, safety, and market credibility.</p>
-      <a href="#contact" class="btn-primary" style="margin-top:32px;display:inline-block">Talk to an Expert →</a>
-    </div>
-    <div class="iso-cards reveal">
-      <div class="iso-card">
-        <div class="iso-card-icon">🏅</div>
-        <div>
-          <h4>ISO 9001 – Quality Management</h4>
-          <p>Establish and maintain a robust quality management system that improves efficiency and builds customer trust.</p>
+    <div class="stats">
+        <div class="stat-box">
+            <div class="stat-icon-wrap"><i class="fa-solid fa-solar-panel"></i></div>
+            <h3>500+ KW</h3>
+            <p>Solar Installed</p>
         </div>
-      </div>
-      <div class="iso-card">
-        <div class="iso-card-icon">🌿</div>
-        <div>
-          <h4>ISO 14001 – Environmental Management</h4>
-          <p>Demonstrate environmental responsibility and meet regulatory requirements with structured EMS implementation.</p>
-        </div>
-      </div>
-      <div class="iso-card">
-        <div class="iso-card-icon">🍃</div>
-        <div>
-          <h4>SQF – Safe Quality Food</h4>
-          <p>GFSI benchmarked SQF certification to demonstrate your commitment to food safety and quality from farm to fork.</p>
-        </div>
-      </div>
-      <div class="iso-card">
-        <div class="iso-card-icon">✅</div>
-        <div>
-          <h4>BRC Global Standards</h4>
-          <p>Achieve BRC certification for food safety, packaging, storage & distribution to access global retail markets.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- PROCESS -->
-<section class="process" id="process">
-  <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
-    <span class="section-label">How It Works</span>
-    <h2 class="section-title">Simple Steps to Solar Freedom</h2>
-    <p class="section-sub" style="margin:0 auto">Our streamlined process gets you from inquiry to installation with zero hassle.</p>
-  </div>
-  <div class="process-steps reveal">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h4>Free Consultation</h4>
-      <p>Tell us your energy needs. Our experts assess your site and recommend the best solution.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h4>Custom Design</h4>
-      <p>We design a tailored solar system optimized for your roof, usage, and budget.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h4>Installation</h4>
-      <p>Certified engineers install your system with precision. On-grid, off-grid or hybrid.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <h4>Commission & Support</h4>
-      <p>System goes live. We provide monitoring, maintenance, and after-sales support.</p>
-    </div>
-  </div>
-</section>
+        <div class="stat-box">
+            <div class="stat-icon-wrap"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+            <h3>80%</h3>
+            <p>Electricity Savings</p>
+        </div>
 
-<!-- WHY US -->
-<section class="why-us">
-  <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 0">
-    <span class="section-label">Why Choose Us</span>
-    <h2 class="section-title">Trusted by Homes &<br>Businesses Across Punjab</h2>
-  </div>
-  <div class="why-grid reveal">
-    <div class="why-card">
-      <div class="why-icon">🔬</div>
-      <h4>Expert Engineering</h4>
-      <p>Certified professionals with deep expertise in PV systems and electrical integration.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">🛡️</div>
-      <h4>End-to-End Service</h4>
-      <p>From design to commissioning, we handle everything so you don't have to worry.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">⚡</div>
-      <h4>Quality Components</h4>
-      <p>We use only premium-grade panels and hardware for maximum durability and performance.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">📋</div>
-      <h4>Compliance Ready</h4>
-      <p>All installations are fully compliant with Indian solar standards and government regulations.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">💬</div>
-      <h4>Dedicated Support</h4>
-      <p>Post-installation monitoring and 24/7 customer support to keep your system running perfectly.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">🌱</div>
-      <h4>Sustainable Mission</h4>
-      <p>We're committed to building a greener Punjab, one rooftop at a time.</p>
-    </div>
-  </div>
-</section>
+        <div class="stat-box">
+            <div class="stat-icon-wrap"><i class="fa-solid fa-award"></i></div>
+            <h3>ISO</h3>
+            <p>Compliance Experts</p>
+        </div>
 
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <h2>Ready to Power Your Future?</h2>
-  <p>Get a FREE site assessment and customized solar proposal — no obligation.</p>
-  <div class="cta-btns">
-    <a href="tel:+917888712152" class="btn-dark">📞 Call +91 78887 12152</a>
-    <a href="#contact" class="btn-dark" style="background:var(--green-dark)">✉️ Request Free Quote</a>
-  </div>
-</section>
+        <div class="stat-box">
+            <div class="stat-icon-wrap"><i class="fa-solid fa-life-ring"></i></div>
+            <h3>24/7</h3>
+            <p>Technical Support</p>
+        </div>
+    </div>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <div>
-      <div class="reveal">
-        <span class="section-label">Get In Touch</span>
-        <h2 class="section-title">Let's Build Your<br>Solar Future Together</h2>
-        <p class="section-sub">Speak with Ankush Talwar, our Managing Director, for a personalized consultation and free quote.</p>
-      </div>
-      <div class="contact-info reveal">
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div>
-            <h4>Our Office</h4>
-            <p>17 Tower Enclave Phase 3,<br>Jalandhar 144001, Punjab</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div>
-            <h4>Phone</h4>
-            <a href="tel:+917888712152">+91 78887 12152</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">✉️</div>
-          <div>
-            <h4>Email</h4>
-            <a href="mailto:Ankush.Talwar@isosolarsolutions.com">Ankush.Talwar@isosolarsolutions.com</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🌐</div>
-          <div>
-            <h4>Website</h4>
-            <a href="https://www.isosolarsolutions.com" target="_blank">www.isosolarsolutions.com</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">👤</div>
-          <div>
-            <h4>Managing Director</h4>
-            <p>Ankush Talwar</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-form reveal">
-      <h3>Get Your Free Quote</h3>
-      <div class="form-row">
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="text" placeholder="Rahul">
-        </div>
-        <div class="form-group">
-          <label>Last Name</label>
-          <input type="text" placeholder="Sharma">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Phone Number</label>
-        <input type="tel" placeholder="+91 98765 43210">
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="you@example.com">
-      </div>
-      <div class="form-group">
-        <label>Service Interested In</label>
-        <select>
-          <option value="">Select a service...</option>
-          <option>PV Systems Installation</option>
-          <option>Rooftop Solar Solutions</option>
-          <option>ISO Certification Consulting</option>
-          <option>GFSI / SQF / BRC Standards</option>
-          <option>Wiring Integration</option>
-          <option>Panel Mounting</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Your Message</label>
-        <textarea placeholder="Tell us about your property and energy requirements..."></textarea>
-      </div>
-      <button class="form-submit" onclick="alert('Thank you! We\'ll contact you within 24 hours.')">Submit Request →</button>
-    </div>
-  </div>
-</section>
+    <section class="mission" id="mission">
+        <div class="mission-inner reveal">
+            <div class="mission-badge">NATIONAL MISSION</div>
+            <h2>Powering Our Nation's<br>Sustainable Future</h2>
+            <div class="tagline">Clean Energy &bull; Compliance &bull; Quality Life</div>
+            <p class="mission-lead">
+                To lead the nation's energy transition by delivering world-class solar engineering and strategic ISO compliance solutions — empowering homes, industries and communities with long-term savings and a cleaner tomorrow.
+            </p>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <h3>☀️ ISO & Solar Solutions</h3>
-      <p>Powering your compliance and energy independence. Expert solar installations and ISO certification consulting across Punjab and beyond.</p>
-      <div class="footer-tagline">Clean Energy · Compliance · Quality Life</div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">PV Systems Installation</a></li>
-        <li><a href="#services">Rooftop Solar</a></li>
-        <li><a href="#iso">ISO Certification</a></li>
-        <li><a href="#iso">GFSI / SQF / BRC</a></li>
-        <li><a href="#services">Wiring Integration</a></li>
-        <li><a href="#services">Panel Mounting</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="tel:+917888712152">+91 78887 12152</a></li>
-        <li><a href="mailto:Ankush.Talwar@isosolarsolutions.com">Email Us</a></li>
-        <li><a href="https://www.isosolarsolutions.com">isosolarsolutions.com</a></li>
-        <li><a href="#">17 Tower Enclave Ph 3, Jalandhar</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 ISO & Solar Solutions. All rights reserved.</span>
-    <span>Managed by Ankush Talwar, Managing Director</span>
-  </div>
-</footer>
+            <div class="mission-pillars">
+                <div class="mission-pillar">
+                    <div class="pillar-icon"><i class="fa-solid fa-sun"></i></div>
+                    <h4>Solar for Every Rooftop</h4>
+                    <p>Accelerating adoption of clean solar energy across the nation's residential, commercial and industrial sectors — reducing dependency on grid power and cutting carbon emissions for future generations.</p>
+                </div>
+                <div class="mission-pillar">
+                    <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Standards That Protect</h4>
+                    <p>Enabling businesses to achieve internationally recognised ISO certifications that build trust, ensure quality, safeguard food safety and demonstrate genuine commitment to excellence and compliance.</p>
+                </div>
+                <div class="mission-pillar">
+                    <div class="pillar-icon"><i class="fa-solid fa-earth-asia"></i></div>
+                    <h4>Green Nation Initiative</h4>
+                    <p>Contributing to national renewable energy targets by installing clean solar systems that reduce grid load, lower carbon footprints and help build a self-reliant, environmentally responsible nation.</p>
+                </div>
+            </div>
 
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(r => observer.observe(r));
+            <div class="mission-commitment">
+                <div class="commit-item"><i class="fa-solid fa-leaf"></i> <span>Net-Zero Carbon Commitment</span></div>
+                <div class="commit-item"><i class="fa-solid fa-handshake"></i> <span>Trusted by 100+ Clients Nationwide</span></div>
+                <div class="commit-item"><i class="fa-solid fa-indian-rupee-sign"></i> <span>Crores Saved in Electricity Bills</span></div>
+            </div>
+        </div>
+    </section>
 
-  // Nav active state on scroll
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    nav.style.background = window.scrollY > 50
-      ? 'rgba(26,74,31,0.98)'
-      : 'rgba(26,74,31,0.97)';
-  });
-</script>
+    <section id="services">
+        <h2 class="section-title reveal">Our Specialized Expertise</h2>
+        <p class="section-subtitle">Complete solar and ISO consultancy solutions for residential, commercial and industrial clients.</p>
+
+        <div class="grid">
+            <div class="card bg-pv reveal">
+                <div class="card-overlay"></div>
+                <div class="card-info">
+                    <h3>PV Systems Installation</h3>
+                    <p>Industrial solar farms and complete turnkey projects nationwide.</p>
+                </div>
+            </div>
+
+            <div class="card bg-rooftop reveal">
+                <div class="card-overlay"></div>
+                <div class="card-info">
+                    <h3>Rooftop Solar Solutions</h3>
+                    <p>Premium on-grid and hybrid systems for homes and businesses.</p>
+                </div>
+            </div>
+
+            <div class="card bg-iso reveal">
+                <div class="card-overlay"></div>
+                <div class="card-info">
+                    <h3>ISO Consulting</h3>
+                    <p>ISO 9001, ISO 14001, ISO 22000 and quality compliance consultancy.</p>
+                </div>
+            </div>
+
+            <div class="card bg-gfsi reveal">
+                <div class="card-overlay"></div>
+                <div class="card-info">
+                    <h3>GFSI Food Safety</h3>
+                    <p>Professional SQF and BRC food safety certification consultancy.</p>
+                </div>
+            </div>
+
+            <div class="card bg-wiring reveal">
+                <div class="card-overlay"></div>
+                <div class="card-info">
+                    <h3>Electrical Integration</h3>
+                    <p>Smart-grid electrical integration and advanced system wiring.</p>
+                </div>
+            </div>
+
+            <div class="card bg-mounting reveal">
+                <div class="card-overlay"></div>
+                <div class="card-info">
+                    <h3>Panel Mounting</h3>
+                    <p>Weather-resistant mounting structures engineered for all conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <h2 class="section-title">Why Choose Us?</h2>
+
+        <div class="why-grid">
+            <div class="why-box">
+                <div class="why-icon-wrap"><i class="fa-solid fa-user-tie"></i></div>
+                <h3>Experienced Team</h3>
+                <p>Professional engineers and ISO consultants delivering complete project support.</p>
+            </div>
+
+            <div class="why-box">
+                <div class="why-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Maximum Savings</h3>
+                <p>Custom-designed systems focused on reducing electricity costs and improving ROI.</p>
+            </div>
+
+            <div class="why-box">
+                <div class="why-icon-wrap"><i class="fa-solid fa-gears"></i></div>
+                <h3>End-To-End Service</h3>
+                <p>Site assessment, subsidy guidance, net metering and after-sales support.</p>
+            </div>
+
+            <div class="why-box">
+                <div class="why-icon-wrap"><i class="fa-solid fa-industry"></i></div>
+                <h3>Industrial Expertise</h3>
+                <p>Trusted by factories, food industries, hospitals and commercial businesses.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="advancements" style="background: var(--white);">
+        <h2 class="section-title reveal">Photovoltaic Advancements</h2>
+        <p class="section-subtitle">We utilize the latest photovoltaic advancements to maximize energy yield and long-term savings.</p>
+
+        <div class="adv-grid">
+            <div class="adv-card reveal">
+                <h3>High-Efficiency Panels</h3>
+                <ul>
+                    <li><strong>Monocrystalline PERC:</strong> Superior performance for rooftops.</li>
+                    <li><strong>Polycrystalline:</strong> Cost-effective industrial applications.</li>
+                    <li><strong>Thin-Film:</strong> Flexible architectural integration.</li>
+                </ul>
+            </div>
+
+            <div class="adv-card reveal">
+                <h3>Engineering Systems</h3>
+                <ul>
+                    <li><strong>Smart-Grid:</strong> Optimized hybrid energy systems.</li>
+                    <li><strong>Resilient Mounting:</strong> Precision-engineered support structures.</li>
+                </ul>
+            </div>
+
+            <div class="adv-card reveal">
+                <h3>Strategic Customization</h3>
+                <ul>
+                    <li><strong>On-Grid:</strong> Net metering integration.</li>
+                    <li><strong>Off-Grid:</strong> 24/7 energy independence.</li>
+                    <li><strong>Hybrid:</strong> Balanced solar + battery backup.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="calculator reveal">
+            <h2 style="font-size:2.5rem; margin-bottom:20px;">Solar Savings Calculator</h2>
+            <p>Estimate how much you can save with solar installation.</p>
+
+            <input type="number" id="bill" placeholder="Enter Monthly Electricity Bill (₹)">
+            <br>
+            <button onclick="calculateSavings()">Calculate Savings</button>
+
+            <div id="result"></div>
+        </div>
+    </section>
+
+
+    <section class="contact-section" id="contact">
+        <div class="contact-grid">
+            <div class="reveal">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px;">Get Free Consultation</h2>
+
+                <p style="margin-bottom: 20px; font-size: 1.15rem; line-height: 1.8;">
+                    Contact us today for solar installation, subsidy guidance, net metering support and ISO consultancy.
+                </p>
+
+                <div style="margin-top: 30px;">
+                    <p style="font-size: 1.2rem; margin-bottom: 10px;"><strong>Email:</strong> ankush.talwar@isosolarsolutions.com</p>
+                    <p style="font-size: 1.2rem; margin-bottom: 10px;"><strong>Phone:</strong> +91 78887 12152</p>
+                    <p style="font-size: 1.2rem;"><strong>Location:</strong> Jalandhar</p>
+                </div>
+            </div>
+
+            <div class="contact-form reveal">
+                <form>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <textarea rows="5" placeholder="Describe your requirement"></textarea>
+                    <button type="submit">Request Free Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 ISO & Solar Solutions | Managed by Ankush Talwar</p>
+    </footer>
+
+    <a href="https://wa.me/917888712152" class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function calculateSavings() {
+            let bill = document.getElementById('bill').value;
+
+            if (bill === '' || bill <= 0) {
+                document.getElementById('result').innerHTML = 'Please enter a valid amount';
+                return;
+            }
+
+            let savings = bill * 0.8;
+            let yearly = savings * 12;
+
+            document.getElementById('result').innerHTML = `
+                Estimated Monthly Savings: ₹${Math.round(savings)} <br><br>
+                Estimated Yearly Savings: ₹${Math.round(yearly)}
+            `;
+        }
+    </script>
+
 </body>
 </html>
